@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>dgx pvt ltd University | Excellence in Education</title>
+    <!-- Tailwind CSS + Google Fonts + Font Awesome -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Swiper JS (for carousels & sliders) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Flatpickr for date picker -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #fefefe;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #2c3e66;
+            background: white;
+            padding: 20px;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .transition-smooth {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 25px -12px rgba(0, 0, 0, 0.15);
+        }
+
+        .modal-transition {
+            transition: opacity 0.25s ease, visibility 0.25s;
+        }
+
+        /* Hide scrollbar but keep functionality for modern look */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #2c3e66;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- ==================== STICKY NAVBAR (Hamburger Menu) ==================== -->
+    <nav class="bg-white shadow-md sticky top-0 z-50 transition-smooth">
+        <div class="container mx-auto px-5 lg:px-8 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <i class="fas fa-landmark text-3xl text-indigo-800"></i>
+                <span class="font-bold text-xl tracking-tight text-gray-800">dgx pvt ltd <span
+                        class="text-indigo-700">University</span></span>
+            </div>
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 text-gray-700 font-medium">
+                <a href="#home" class="hover:text-indigo-700 transition">Home</a>
+                <a href="#about" class="hover:text-indigo-700 transition">About</a>
+                <a href="#courses" class="hover:text-indigo-700 transition">Courses</a>
+                <a href="#faculty" class="hover:text-indigo-700 transition">Faculty</a>
+                <a href="#testimonials" class="hover:text-indigo-700 transition">Reviews</a>
+                <a href="#gallery" class="hover:text-indigo-700 transition">Gallery</a>
+                <a href="#news" class="hover:text-indigo-700 transition">News & Events</a>
+                <a href="#contact" class="hover:text-indigo-700 transition">Contact</a>
+                <a href="#admission"
+                    class="bg-indigo-700 text-white px-4 py-2 rounded-full text-sm hover:bg-indigo-800 transition">Apply
+                    Now</a>
+            </div>
+            <!-- Mobile Hamburger -->
+            <div class="md:hidden">
+                <button id="menuBtn" class="text-gray-700 text-2xl focus:outline-none"><i
+                        class="fas fa-bars"></i></button>
+            </div>
+        </div>
+        <!-- Mobile Menu Panel -->
+        <div id="mobileMenu"
+            class="md:hidden hidden bg-white border-t border-gray-100 px-5 pb-4 pt-2 flex flex-col space-y-3 text-gray-700 font-medium">
+            <a href="#home" class="py-2 hover:text-indigo-700">Home</a>
+            <a href="#about" class="py-2 hover:text-indigo-700">About</a>
+            <a href="#courses" class="py-2 hover:text-indigo-700">Courses</a>
+            <a href="#faculty" class="py-2 hover:text-indigo-700">Faculty</a>
+            <a href="#testimonials" class="py-2 hover:text-indigo-700">Reviews</a>
+            <a href="#gallery" class="py-2 hover:text-indigo-700">Gallery</a>
+            <a href="#news" class="py-2 hover:text-indigo-700">News & Events</a>
+            <a href="#contact" class="py-2 hover:text-indigo-700">Contact</a>
+            <a href="#admission" class="bg-indigo-100 text-indigo-800 text-center py-2 rounded-full">Apply Online</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- ==================== HERO SECTION (Dynamic Slider) ==================== -->
+        <section id="home" class="relative">
+            <div class="swiper heroSwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide h-[500px] md:h-[600px] bg-cover bg-center"
+                        style="background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+                        <div class="flex items-center justify-center h-full text-center text-white px-4">
+                            <div>
+                                <h1 class="text-4xl md:text-6xl font-bold mb-4">Shape Your Future</h1>
+                                <p class="text-xl mb-6">World-class education & global opportunities</p><a
+                                    href="#admission"
+                                    class="bg-white text-indigo-800 px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-gray-100">Apply
+                                    Online →</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide h-[500px] md:h-[600px] bg-cover bg-center"
+                        style="background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+                        <div class="flex items-center justify-center h-full text-white">
+                            <div>
+                                <h1 class="text-4xl md:text-6xl font-bold mb-4">Innovation Hub</h1>
+                                <p class="text-xl mb-6">Research driven learning environment</p><a href="#admission"
+                                    class="bg-white text-indigo-800 px-8 py-3 rounded-full font-semibold">Enroll Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide h-[500px] md:h-[600px] bg-cover bg-center"
+                        style="background-image: linear-gradient(0deg, rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+                        <div class="flex items-center justify-center h-full text-white">
+                            <div>
+                                <h1 class="text-4xl md:text-6xl font-bold mb-4">Top Ranked Faculty</h1>
+                                <p class="text-xl mb-6">Learn from industry leaders</p><a href="#admission"
+                                    class="bg-white text-indigo-800 px-8 py-3 rounded-full font-semibold">Get
+                                    Started</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </section>
+
+        <!-- ==================== POPUP ALERT (Image/PDF) ==================== -->
+        <div id="noticePopup"
+            class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-[999] modal-transition hidden">
+            <div class="bg-white rounded-2xl max-w-lg w-full mx-4 p-6 relative shadow-2xl">
+                <button id="closePopup"
+                    class="absolute top-3 right-4 text-gray-500 hover:text-red-600 text-2xl">&times;</button>
+                <div class="text-center mb-3"><i class="fas fa-bullhorn text-indigo-600 text-3xl"></i>
+                    <h3 class="text-xl font-bold mt-1"> Important Notice</h3>
+                </div>
+                <div id="popupContent" class="my-4 text-center">
+                    <img id="popupImage" class="mx-auto rounded-lg max-h-48 object-cover hidden" alt="notice image">
+                    <a id="popupPdfLink" href="#" target="_blank"
+                        class="inline-flex items-center gap-2 bg-red-50 text-red-700 px-4 py-2 rounded-lg font-medium"><i
+                            class="fas fa-file-pdf"></i> Download Notice PDF</a>
+                    <p id="popupTextMsg" class="text-gray-700 mt-2">Semester exams starting from 20th May. Submit
+                        assignments before deadline.</p>
+                </div>
+                <button class="w-full bg-indigo-600 text-white py-2 rounded-lg mt-2 hover:bg-indigo-700"
+                    id="dismissPopup">Dismiss</button>
+            </div>
+        </div>
+
+        <!-- ABOUT + MISSION + VISION -->
+        <section id="about" class="py-20 px-5 bg-gray-50">
+            <div class="container mx-auto max-w-6xl">
+                <div class="grid md:grid-cols-3 gap-10 text-center md:text-left">
+                    <div><i class="fas fa-history text-4xl text-indigo-600 mb-4"></i>
+                        <h3 class="text-2xl font-bold">History</h3>
+                        <p class="text-gray-600 mt-2">Established in 1985, dgx pvt ltd  University has been a beacon of
+                            academic excellence for over 4 decades.</p>
+                    </div>
+                    <div><i class="fas fa-bullseye text-4xl text-indigo-600 mb-4"></i>
+                        <h3 class="text-2xl font-bold">Mission</h3>
+                        <p class="text-gray-600 mt-2">To empower students with knowledge, ethics, and innovation to lead
+                            global change.</p>
+                    </div>
+                    <div><i class="fas fa-eye text-4xl text-indigo-600 mb-4"></i>
+                        <h3 class="text-2xl font-bold">Vision</h3>
+                        <p class="text-gray-600 mt-2">Becoming a world-class interdisciplinary research university by
+                            2030.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COURSES GRID -->
+        <section id="courses" class="py-20 px-5">
+            <div class="container mx-auto max-w-6xl">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Our <span
+                        class="text-indigo-700">Programs</span></h2>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-2xl shadow-md p-6 card-hover transition-smooth"><i
+                            class="fas fa-code text-3xl text-indigo-600 mb-3"></i>
+                        <h3 class="text-xl font-bold">Computer Science</h3>
+                        <p class="text-gray-500 mt-2">AI, ML, Full-Stack, Data Science. 4-year degree with internships.
+                        </p>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-md p-6 card-hover"><i
+                            class="fas fa-chart-line text-3xl text-indigo-600 mb-3"></i>
+                        <h3 class="text-xl font-bold">Business Admin</h3>
+                        <p class="text-gray-500 mt-2">Finance, Marketing, HR. Global business exposure & case studies.
+                        </p>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-md p-6 card-hover"><i
+                            class="fas fa-microscope text-3xl text-indigo-600 mb-3"></i>
+                        <h3 class="text-xl font-bold">Biotechnology</h3>
+                        <p class="text-gray-500 mt-2">State-of-art labs & research collaborations.</p>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-md p-6 card-hover"><i
+                            class="fas fa-drafting-compass text-3xl text-indigo-600 mb-3"></i>
+                        <h3 class="text-xl font-bold">Design & Innovation</h3>
+                        <p class="text-gray-500 mt-2">Product design, UX/UI, and creative technologies.</p>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-md p-6 card-hover"><i
+                            class="fas fa-balance-scale text-3xl text-indigo-600 mb-3"></i>
+                        <h3 class="text-xl font-bold">Law (LLB)</h3>
+                        <p class="text-gray-500 mt-2">Integrated 5-year program with mooting culture.</p>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-md p-6 card-hover"><i
+                            class="fas fa-robot text-3xl text-indigo-600 mb-3"></i>
+                        <h3 class="text-xl font-bold">Robotics Engg.</h3>
+                        <p class="text-gray-500 mt-2">Hands-on automation & drone tech.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FACULTY PROFILE CARDS -->
+        <section id="faculty" class="py-20 bg-gray-50 px-5">
+            <div class="container mx-auto max-w-6xl">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Meet Our <span
+                        class="text-indigo-700">Faculty</span></h2>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-md text-center"><img
+                            src="https://randomuser.me/api/portraits/women/68.jpg" class="h-56 w-full object-cover">
+                        <div class="p-4">
+                            <h4 class="font-bold text-xl">Dr. Emily Carter</h4>
+                            <p class="text-indigo-600">Dean, CS & AI</p>
+                            <p class="text-sm text-gray-500">Ph.D. MIT, 15+ years</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-md text-center"><img
+                            src="https://randomuser.me/api/portraits/men/32.jpg" class="h-56 w-full object-cover">
+                        <div class="p-4">
+                            <h4 class="font-bold text-xl">Prof. James Liu</h4>
+                            <p class="text-indigo-600">Business School</p>
+                            <p class="text-sm text-gray-500">Ex-McKinsey consultant</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-md text-center"><img
+                            src="https://randomuser.me/api/portraits/women/45.jpg" class="h-56 w-full object-cover">
+                        <div class="p-4">
+                            <h4 class="font-bold text-xl">Dr. Sarah Khan</h4>
+                            <p class="text-indigo-600">Biotech Head</p>
+                            <p class="text-sm text-gray-500">Published in Nature</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-md text-center"><img
+                            src="https://randomuser.me/api/portraits/men/91.jpg" class="h-56 w-full object-cover">
+                        <div class="p-4">
+                            <h4 class="font-bold text-xl">Prof. Michael Okafor</h4>
+                            <p class="text-indigo-600">Robotics</p>
+                            <p class="text-sm text-gray-500">NASA affiliate researcher</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS CAROUSEL -->
+        <section id="testimonials" class="py-20 px-5 bg-indigo-50">
+            <div class="container mx-auto max-w-5xl">
+                <h2 class="text-3xl font-bold text-center mb-10">Student <span
+                        class="text-indigo-700">Testimonials</span></h2>
+                <div class="swiper testimonialSwiper overflow-hidden pb-12">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide bg-white p-8 rounded-2xl shadow-md text-center"><i
+                                class="fas fa-quote-left text-3xl text-indigo-300"></i>
+                            <p class="mt-4 text-gray-700">"The practical learning environment and mentorship changed my
+                                career trajectory. Highly recommend!"</p>
+                            <h4 class="font-bold mt-5">— Anjali Sharma, CSE 2024</h4>
+                        </div>
+                        <div class="swiper-slide bg-white p-8 rounded-2xl shadow-md text-center"><i
+                                class="fas fa-quote-left text-3xl text-indigo-300"></i>
+                            <p class="mt-4 text-gray-700">"Incredible faculty & state-of-art labs. The placement cell is
+                                super active."</p>
+                            <h4 class="font-bold mt-5">— Rahul Verma, BBA</h4>
+                        </div>
+                        <div class="swiper-slide bg-white p-8 rounded-2xl shadow-md text-center"><i
+                                class="fas fa-quote-left text-3xl text-indigo-300"></i>
+                            <p class="mt-4 text-gray-700">"Global exposure through exchange programs helped me land my
+                                dream job."</p>
+                            <h4 class="font-bold mt-5">— Maria Gonzales, Law</h4>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALLERIES: PHOTO GRID + VIDEO GALLERY (YouTube embeds) -->
+        <section id="gallery" class="py-20 px-5">
+            <div class="container mx-auto max-w-6xl">
+                <h2 class="text-3xl font-bold text-center mb-6">Campus <span class="text-indigo-700">Gallery</span></h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+                    <img class="rounded-xl shadow-md h-40 w-full object-cover"
+                        src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=400&h=300&fit=crop"
+                        alt="campus">
+                    <img class="rounded-xl shadow-md h-40 w-full object-cover"
+                        src="https://images.unsplash.com/photo-1562774053-701939374585?w=400&h=300&fit=crop"
+                        alt="library">
+                    <img class="rounded-xl shadow-md h-40 w-full object-cover"
+                        src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400&h=300&fit=crop"
+                        alt="sports">
+                    <img class="rounded-xl shadow-md h-40 w-full object-cover"
+                        src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=400&h=300&fit=crop"
+                        alt="auditorium">
+                </div>
+                <h3 class="text-2xl font-semibold mb-4">🎥 Video Gallery</h3>
+                <div class="grid md:grid-cols-2 gap-6"><iframe class="w-full h-64 rounded-xl shadow-lg"
+                        src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Campus tour" frameborder="0"
+                        allowfullscreen></iframe><iframe class="w-full h-64 rounded-xl shadow-lg"
+                        src="https://www.youtube.com/embed/8eTgC7s2Wsc" title="Convocation" frameborder="0"
+                        allowfullscreen></iframe></div>
+            </div>
+        </section>
+
+        <!-- NEWS & EVENTS (Countdown + News list) -->
+        <section id="news" class="py-20 bg-gray-50 px-5">
+            <div class="container mx-auto max-w-6xl">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-5">📰 Latest News</h3>
+                        <ul id="newsList" class="space-y-3">
+                            <li class="bg-white p-4 rounded-lg shadow">🎓 New scholarship announced for meritorious
+                                students.</li>
+                            <li class="bg-white p-4 rounded-lg shadow">🏆 University wins 'Best Innovation Award 2025'.
+                            </li>
+                            <li class="bg-white p-4 rounded-lg shadow">📅 Summer internship registrations open.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-5">⏳ Upcoming Event Countdown</h3>
+                        <div class="bg-indigo-800 text-white p-6 rounded-2xl text-center">
+                            <p class="text-xl font-semibold">Annual Tech Fest 2025</p>
+                            <div id="countdownTimer" class="text-3xl font-mono mt-3 flex justify-center gap-4">
+                                <span>00d</span> <span>00h</span> <span>00m</span> <span>00s</span></div>
+                            <p class="mt-3">📍 Main Auditorium | 15 May 2025</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NOTICE BOARD (PDF Downloads + text) -->
+        <section class="py-10 px-5">
+            <div class="container mx-auto max-w-4xl bg-white rounded-2xl shadow p-6">
+                <h3 class="text-2xl font-bold flex items-center gap-2"><i class="fas fa-chalkboard"></i> Notice Board
+                </h3>
+                <div class="mt-4 space-y-3" id="noticeBoardList">
+                    <div class="border-b pb-2 flex justify-between items-center"><span>📄 Exam schedule - Summer
+                            2025</span><a href="#" class="text-indigo-600 text-sm"><i class="fas fa-download"></i>
+                            PDF</a></div>
+                    <div class="border-b pb-2 flex justify-between"><span>📄 Holiday list for Eid & Diwali</span><a
+                            href="#" class="text-indigo-600 text-sm">Download</a></div>
+                    <div class="pt-2"><span class="font-medium">⚠️ Text Notice: Library timings extended till 10 PM
+                            during exams.</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ONLINE ADMISSION FORM -->
+        <section id="admission" class="py-20 px-5 bg-indigo-50">
+            <div class="container mx-auto max-w-3xl bg-white rounded-2xl shadow-xl p-8">
+                <h2 class="text-3xl font-bold text-center mb-6">📝 Online Admission Form</h2>
+                <form id="admissionForm">
+                    <div class="grid md:grid-cols-2 gap-4"><input type="text" placeholder="Full Name"
+                            class="border p-3 rounded-lg" required><input type="email" placeholder="Email"
+                            class="border p-3 rounded-lg" required><input type="tel" placeholder="Phone"
+                            class="border p-3 rounded-lg" required><select class="border p-3 rounded-lg">
+                            <option>Select Program</option>
+                            <option>Computer Science</option>
+                            <option>Business Admin</option>
+                            <option>Biotechnology</option>
+                        </select><input type="date" class="border p-3 rounded-lg" id="dob"
+                            placeholder="Date of Birth"><textarea rows="2" placeholder="Address"
+                            class="border p-3 rounded-lg md:col-span-2"></textarea></div><button type="submit"
+                        class="mt-6 w-full bg-indigo-700 text-white py-3 rounded-xl font-semibold hover:bg-indigo-800">Submit
+                        Application</button>
+                    <p id="formMsg" class="text-green-600 text-center mt-3 hidden">✅ Application received! Admin will
+                        contact you.</p>
+                </form>
+            </div>
+        </section>
+
+        <!-- CONTACT + GOOGLE MAPS -->
+        <section id="contact" class="py-20 px-5">
+            <div class="container mx-auto max-w-6xl grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Get in Touch</h3>
+                    <p><i class="fas fa-map-marker-alt text-indigo-600 mr-2"></i> kathmandu, nepal</p>
+                    <p class="mt-2"><i class="fas fa-phone-alt"></i> +977 9800000000</p>
+                    <p><i class="fas fa-envelope"></i> bikram@test.edu</p>
+                    <div class="mt-6"><iframe width="100%" height="250" style="border:0; border-radius: 20px;"
+                            loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.966354341534!2d-74.00601588459452!3d40.71277527932973!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a316c6c8d0f%3A0x2e8f8f8f8f8f8f8f!2sNew+York!5e0!3m2!1sen!2sus!4v1650000000000!5m2!1sen!2sus"></iframe>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Send a Message</h3>
+                    <form id="contactForm"><input type="text" placeholder="Your Name"
+                            class="w-full border p-3 rounded-lg mb-3"><input type="email" placeholder="Email"
+                            class="w-full border p-3 rounded-lg mb-3"><textarea rows="3" placeholder="Message"
+                            class="w-full border p-3 rounded-lg"></textarea><button
+                            class="bg-indigo-700 text-white px-6 py-2 rounded-lg mt-2">Send Inquiry</button></form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-8 text-center text-sm">© 2025 dgx pvt ltd — Excellence in
+        Education. All rights reserved.</footer>
+
+    <!-- ADMIN PANEL SIMULATION (Robust CRUD & Management) -->
+    <div class="fixed bottom-5 right-5 z-40"><button id="openAdminBtn"
+            class="bg-gray-800 text-white p-3 rounded-full shadow-xl hover:bg-indigo-800"><i
+                class="fas fa-user-cog text-xl"></i></button></div>
+    <div id="adminModal" class="fixed inset-0 bg-black bg-opacity-60 z-[1000] hidden overflow-y-auto">
+        <div class="bg-white max-w-4xl w-full mx-auto my-10 rounded-2xl p-6">
+            <div class="flex justify-between">
+                <h2 class="text-2xl font-bold">Admin Panel</h2><button id="closeAdminBtn"
+                    class="text-2xl">&times;</button>
+            </div>
+            <div class="mt-4 grid md:grid-cols-3 gap-4">
+                <div class="bg-indigo-50 p-4 rounded-xl">
+                    <p class="font-bold">📊 Dashboard</p>
+                    <p>Total Students: 3,240</p>
+                    <p>Notices: 5 | Events: 3</p>
+                </div>
+                <div class="col-span-2">
+                    <h3 class="font-bold">Manage Notices / News / Events</h3>
+                    <div class="flex gap-2 flex-wrap mt-2"><button id="addNoticeBtn"
+                            class="bg-indigo-600 text-white px-3 py-1 rounded text-sm">➕ Add Notice</button><button
+                            id="manageGalleryBtn" class="bg-green-600 text-white px-3 py-1 rounded text-sm">🖼️ Manage
+                            Gallery (simulate)</button><button id="popupManagerBtn"
+                            class="bg-purple-600 text-white px-3 py-1 rounded text-sm">🔔 Popup Manager</button></div>
+                    <div id="dynamicNoticeArea" class="mt-4 border-t pt-3">
+                        <h4 class="font-semibold">Current Notices</h4>
+                        <ul id="adminNoticeList" class="text-sm space-y-1">
+                            <li>📌 Exam schedule 2025 <button class="text-red-500 ml-2 delete-notice">❌</button></li>
+                            <li>📌 Holiday list <button class="text-red-500 ml-2 delete-notice">❌</button></li>
+                        </ul>
+                        <h4 class="font-semibold mt-3">Admission Applications</h4>
+                        <ul id="admissionRecords" class="text-xs bg-gray-100 p-2 rounded"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Global Storage for admin simulation
+        let noticesArray = ["Exam schedule 2025", "Holiday list"];
+        let applications = [];
+
+        // Helper render admin notices & admission list
+        function renderAdminPanel() {
+            const ul = document.getElementById('adminNoticeList');
+            ul.innerHTML = noticesArray.map((n, idx) => `<li>📌 ${n} <button class="text-red-500 ml-2 delete-notice" data-idx="${idx}">❌</button></li>`).join('');
+            document.querySelectorAll('.delete-notice').forEach(btn => btn.addEventListener('click', (e) => { let i = btn.dataset.idx; noticesArray.splice(i, 1); renderAdminPanel(); renderNoticeBoard(); }));
+            const admissionUl = document.getElementById('admissionRecords');
+            admissionUl.innerHTML = applications.map(app => `<li>${app.name} - ${app.program} (${app.email})</li>`).join('') || "<li>No applications yet</li>";
+        }
+        function renderNoticeBoard() {
+            const board = document.getElementById('noticeBoardList');
+            if (board) board.innerHTML = noticesArray.map(n => `<div class="border-b pb-2 flex justify-between items-center"><span>📄 ${n}</span><a href="#" class="text-indigo-600 text-sm"><i class="fas fa-download"></i> PDF (sample)</a></div>`).join('') + `<div class="pt-2"><span class="font-medium">⚠️ Text Notice: Library timings extended till 10 PM during exams.</span></div>`;
+        }
+        // Admission form handler
+        document.getElementById('admissionForm')?.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = e.target[0].value; const email = e.target[1].value; const program = e.target[3].value;
+            if (name && email) { applications.push({ name, email, program }); renderAdminPanel(); document.getElementById('formMsg').classList.remove('hidden'); setTimeout(() => document.getElementById('formMsg').classList.add('hidden'), 3000); e.target.reset(); }
+        });
+        // Popup Manager (change popup image/pdf)
+        let popupConfig = { type: 'text', content: 'Semester exams starting from 20th May. Submit assignments before deadline.', imgUrl: '', pdfLink: '' };
+        document.getElementById('popupManagerBtn')?.addEventListener('click', () => {
+            let newMsg = prompt("Enter popup text message:", popupConfig.content);
+            if (newMsg) { popupConfig.content = newMsg; popupConfig.type = 'text'; alert("Popup updated!"); }
+            let imgLink = prompt("Enter image URL (optional, leave blank to keep text)", "");
+            if (imgLink) { popupConfig.imgUrl = imgLink; popupConfig.type = 'image'; popupConfig.content = ''; }
+        });
+        // Load popup on page load
+        window.addEventListener('load', () => {
+            const popupDiv = document.getElementById('noticePopup');
+            const imgEl = document.getElementById('popupImage');
+            const pdfLink = document.getElementById('popupPdfLink');
+            const textMsg = document.getElementById('popupTextMsg');
+            if (popupConfig.type === 'image' && popupConfig.imgUrl) { imgEl.src = popupConfig.imgUrl; imgEl.classList.remove('hidden'); pdfLink.classList.add('hidden'); textMsg.classList.add('hidden'); }
+            else { textMsg.innerText = popupConfig.content; textMsg.classList.remove('hidden'); pdfLink.classList.add('hidden'); imgEl.classList.add('hidden'); }
+            popupDiv.classList.remove('hidden');
+            document.getElementById('closePopup').onclick = () => popupDiv.classList.add('hidden');
+            document.getElementById('dismissPopup').onclick = () => popupDiv.classList.add('hidden');
+        });
+        // Swiper init
+        new Swiper('.heroSwiper', { loop: true, navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }, autoplay: { delay: 4000 } });
+        new Swiper('.testimonialSwiper', { loop: true, pagination: { el: '.swiper-pagination', clickable: true }, slidesPerView: 1, breakpoints: { 768: { slidesPerView: 2 } } });
+        // Countdown timer
+        const targetDate = new Date('May 15, 2025 00:00:00').getTime();
+        setInterval(() => { const now = new Date().getTime(); const diff = targetDate - now; if (diff > 0) { const d = Math.floor(diff / (1000 * 60 * 60 * 24)); const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)); const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)); const s = Math.floor((diff % (1000 * 60)) / 1000); document.getElementById('countdownTimer').innerHTML = `<span>${d}d</span> <span>${h}h</span> <span>${m}m</span> <span>${s}s</span>`; } }, 1000);
+        // Admin Modal + mobile menu + add notice crud
+        document.getElementById('openAdminBtn').onclick = () => document.getElementById('adminModal').classList.remove('hidden');
+        document.getElementById('closeAdminBtn').onclick = () => document.getElementById('adminModal').classList.add('hidden');
+        document.getElementById('addNoticeBtn')?.addEventListener('click', () => { let newNotice = prompt("Enter new notice text"); if (newNotice) { noticesArray.push(newNotice); renderAdminPanel(); renderNoticeBoard(); } });
+        document.getElementById('manageGalleryBtn')?.addEventListener('click', () => alert("Gallery management (demo): In production, upload images via backend."));
+        // mobile toggle
+        const menuBtn = document.getElementById('menuBtn'); const mobileMenu = document.getElementById('mobileMenu');
+        menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        renderAdminPanel(); renderNoticeBoard();
+        document.getElementById('contactForm')?.addEventListener('submit', (e) => { e.preventDefault(); alert("Message sent! Our team will respond soon."); e.target.reset(); });
+    </script>
+</body>
+
+</html>
