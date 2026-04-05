@@ -1,0 +1,1748 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APF Nepal Institute of Health Sciences | प्राथमिक स्वास्थ्य शिक्षाको उत्कृष्ट केन्द्र</title>
+    <meta name="description" content="APF नेपाल स्वास्थ्य विज्ञान संस्थान बलम्बु - नेपाल पुलिस अन्तर्गत उत्कृष्ट स्वास्थ्य शिक्षा संस्था">
+    <meta name="keywords" content="APF नेपाल, स्वास्थ्य विज्ञान, नर्सिंग, प्राविधिक शिक्षा, बलम्बु, स्वास्थ्य कर्मी">
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+    <!-- Animation Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    
+    <style>
+        :root {
+            --primary-blue: #1a237e;
+            --secondary-gold: #ffc107;
+            --accent-red: #d32f2f;
+            --light-blue: #e8eaf6;
+            --dark-blue: #0d124d;
+            --text-dark: #2c3e50;
+            --text-light: #546e7a;
+            --white: #ffffff;
+            --light-gray: #f8f9fa;
+            --shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, #f8f9fa 0%, #e8eaf6 100%);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== PRELOADER ===== */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-blue);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 5px solid var(--light-blue);
+            border-top: 5px solid var(--secondary-gold);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* ===== TOP BAR ===== */
+        .top-bar {
+            background: var(--dark-blue);
+            color: var(--white);
+            padding: 12px 0;
+            font-size: 0.9rem;
+        }
+
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 25px;
+        }
+
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+
+        .contact-info span:hover {
+            color: var(--secondary-gold);
+            transform: translateY(-2px);
+        }
+
+        .social-links-top {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links-top a {
+            color: var(--white);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-links-top a:hover {
+            background: var(--secondary-gold);
+            color: var(--primary-blue);
+            transform: translateY(-3px);
+        }
+
+        /* ===== HEADER ===== */
+        .main-header {
+            background: var(--white);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            animation: slideDown 0.5s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 0;
+            position: relative;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex: 1;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: var(--primary-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 4px solid var(--secondary-gold);
+            padding: 10px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(26, 35, 126, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(26, 35, 126, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(26, 35, 126, 0); }
+        }
+
+        .logo img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .institute-title {
+            flex: 2;
+        }
+
+        .institute-title h1 {
+            color: var(--primary-blue);
+            font-size: 2.2rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 5px;
+            background: linear-gradient(45deg, var(--primary-blue), var(--accent-red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .institute-title p {
+            color: var(--text-light);
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .institute-title p i {
+            color: var(--accent-red);
+        }
+
+        /* ===== NAVIGATION ===== */
+        .main-nav {
+            flex: 1.5;
+        }
+
+        .nav-list {
+            display: flex;
+            justify-content: flex-end;
+            gap: 5px;
+            list-style: none;
+        }
+
+        .nav-list li {
+            position: relative;
+        }
+
+        .nav-list a {
+            color: var(--text-dark);
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-list a:hover {
+            background: var(--light-blue);
+            color: var(--primary-blue);
+            transform: translateY(-2px);
+        }
+
+        .nav-list a.active {
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+
+        .nav-list a.active::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 3px;
+            background: var(--secondary-gold);
+            border-radius: 2px;
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            background: var(--primary-blue);
+            color: var(--white);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .menu-toggle:hover {
+            background: var(--secondary-gold);
+            color: var(--primary-blue);
+            transform: rotate(90deg);
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero-section {
+            background: linear-gradient(rgba(26, 35, 126, 0.85), rgba(13, 18, 77, 0.9)), url('assets/images/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content h2 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .hero-highlights {
+            display: flex;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 25px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+
+        .highlight-item:hover {
+            background: rgba(255, 193, 7, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .highlight-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--secondary-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+        }
+
+        /* ===== MAIN CONTENT GRID ===== */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 300px 1fr 350px;
+            gap: 30px;
+            padding: 50px 0;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+            height: fit-content;
+            position: sticky;
+            top: 120px;
+        }
+
+        .sidebar-title {
+            color: var(--primary-blue);
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--secondary-gold);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Notice Board */
+        .notice-board {
+            margin-bottom: 30px;
+        }
+
+        .notice-list {
+            list-style: none;
+        }
+
+        .notice-item {
+            padding: 15px;
+            margin-bottom: 15px;
+            background: var(--light-gray);
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-red);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .notice-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .notice-item h4 {
+            color: var(--text-dark);
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .notice-item .date {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            background: var(--white);
+            padding: 3px 10px;
+            border-radius: 20px;
+        }
+
+        .notice-item p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* Quick Links */
+        .quick-links {
+            margin-bottom: 30px;
+        }
+
+        .quick-link-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            background: var(--light-gray);
+            border-radius: 8px;
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .quick-link-item:hover {
+            background: var(--primary-blue);
+            color: var(--white);
+            transform: translateX(10px);
+        }
+
+        .quick-link-item i {
+            width: 30px;
+            height: 30px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-blue);
+        }
+
+        /* Main Content Area */
+        .content-area {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .content-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            animation: fadeIn 0.6s ease-out;
+            transition: var(--transition);
+        }
+
+        .content-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .content-title {
+            color: var(--primary-blue);
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--secondary-gold);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .about-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+
+        /* Courses Section */
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .course-card {
+            background: linear-gradient(135deg, var(--light-blue) 0%, var(--white) 100%);
+            border-radius: 12px;
+            padding: 25px;
+            transition: var(--transition);
+            border: 1px solid rgba(26, 35, 126, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .course-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--secondary-gold));
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(26, 35, 126, 0.15);
+        }
+
+        .course-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-blue);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--white);
+            font-size: 1.5rem;
+        }
+
+        .course-card h4 {
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .course-details {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .course-details li {
+            padding: 5px 0;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .course-details li i {
+            color: var(--secondary-gold);
+        }
+
+        .course-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 10px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .course-btn:hover {
+            background: var(--secondary-gold);
+            color: var(--primary-blue);
+            gap: 15px;
+        }
+
+        /* Gallery Section */
+        .gallery-container {
+            position: relative;
+        }
+
+        .gallery-nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .gallery-nav-btn {
+            padding: 10px 25px;
+            border: none;
+            background: var(--light-gray);
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .gallery-nav-btn.active {
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            height: 200px;
+            cursor: pointer;
+        }
+
+        .gallery-item img,
+        .gallery-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img,
+        .gallery-item:hover video {
+            transform: scale(1.1);
+        }
+
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px;
+            color: var(--white);
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+            z-index: 1;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        /* Right Sidebar */
+        .event-card {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+            color: var(--white);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .event-date {
+            background: var(--secondary-gold);
+            color: var(--primary-blue);
+            padding: 8px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .event-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        /* Teachers Section */
+        .teachers-slider {
+            position: relative;
+        }
+
+        .teacher-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .teacher-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .teacher-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            border: 5px solid var(--light-blue);
+            overflow: hidden;
+        }
+
+        .teacher-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .teacher-info h4 {
+            color: var(--primary-blue);
+            margin-bottom: 5px;
+        }
+
+        .teacher-info p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* ===== STATS SECTION ===== */
+        .stats-section {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .stat-item {
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+
+        .stat-item:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--secondary-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+            color: var(--primary-blue);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, var(--secondary-gold), #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* ===== FOOTER ===== */
+        .main-footer {
+            background: var(--dark-blue);
+            color: var(--white);
+            padding: 60px 0 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            color: var(--secondary-gold);
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(255, 193, 7, 0.3);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary-gold);
+            transform: translateX(5px);
+        }
+
+        .contact-info-footer p {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--secondary-gold);
+            color: var(--primary-blue);
+            transform: translateY(-5px);
+        }
+
+        .map-container {
+            border-radius: 10px;
+            overflow: hidden;
+            height: 200px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding: 25px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        /* ===== MODALS ===== */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            background: var(--white);
+            border-radius: 20px;
+            max-width: 900px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: slideUp 0.4s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--accent-red);
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 10;
+            transition: var(--transition);
+        }
+
+        .close-modal:hover {
+            transform: rotate(90deg);
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 1200px) {
+            .main-grid {
+                grid-template-columns: 250px 1fr;
+            }
+            
+            .right-sidebar {
+                grid-column: 1 / -1;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                position: static;
+            }
+            
+            .header-content {
+                flex-wrap: wrap;
+            }
+            
+            .main-nav {
+                order: 3;
+                width: 100%;
+                margin-top: 20px;
+            }
+            
+            .nav-list {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            .hero-content h2 {
+                font-size: 2.5rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .main-nav {
+                display: none;
+            }
+            
+            .main-nav.active {
+                display: block;
+            }
+            
+            .nav-list {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .hero-highlights {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            
+            .social-links-top {
+                justify-content: center;
+                margin-top: 10px;
+            }
+            
+            .institute-title h1 {
+                font-size: 1.8rem;
+            }
+            
+            .courses-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-content h2 {
+                font-size: 2rem;
+            }
+            
+            .content-card {
+                padding: 20px;
+            }
+            
+            .content-title {
+                font-size: 1.5rem;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== ANIMATION CLASSES ===== */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== CUSTOM SCROLLBAR ===== */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--light-gray);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-blue);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--dark-blue);
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="contact-info">
+                <span><i class="fas fa-map-marker-alt"></i> बलम्बु, काठमाडौं, नेपाल</span>
+                <span><i class="fas fa-phone-alt"></i> +९७७-१-४३१३६००</span>
+                <span><i class="fas fa-envelope"></i> apfnihs@gmail.com</span>
+            </div>
+            <div class="social-links-top">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="logo-section">
+                <div class="logo">
+                    <img src="assets/images/logo.png" alt="APF NIHS Logo">
+                </div>
+                <div class="institute-title">
+                    <h1>APF नेपाल स्वास्थ्य विज्ञान संस्थान</h1>
+                    <p><i class="fas fa-graduation-cap"></i> प्राथमिक स्वास्थ्य शिक्षाको उत्कृष्ट केन्द्र</p>
+                </div>
+            </div>
+            
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav class="main-nav" id="mainNav">
+                <ul class="nav-list">
+                    <li><a href="#home" class="active"><i class="fas fa-home"></i> गृहपृष्ठ</a></li>
+                    <li><a href="#about"><i class="fas fa-university"></i> हाम्रो बारे</a></li>
+                    <li><a href="#courses"><i class="fas fa-book"></i> कोर्सहरू</a></li>
+                    <li><a href="#gallery"><i class="fas fa-images"></i> ग्यालरी</a></li>
+                    <li><a href="#teachers"><i class="fas fa-chalkboard-teacher"></i> शिक्षकहरू</a></li>
+                    <li><a href="#contact"><i class="fas fa-address-book"></i> सम्पर्क</a></li>
+                    <li><a href="#admission"><i class="fas fa-user-graduate"></i> भर्ना</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h2>स्वास्थ्य सेवामा उत्कृष्टता,<br>मानवता सेवामा समर्पण</h2>
+                <p>नेपाल पुलिसको संरक्षणमा सञ्चालित, स्वास्थ्य शिक्षाको क्षेत्रमा अग्रणी संस्था। दक्ष स्वास्थ्यकर्मी तयार पार्ने हाम्रो संकल्प।</p>
+                <a href="#admission" class="course-btn" style="font-size: 1.1rem; padding: 15px 35px;">
+                    <i class="fas fa-user-plus"></i> भर्नाको लागि आवेदन दिनुहोस्
+                </a>
+                
+                <div class="hero-highlights">
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div>
+                            <h4>२०+ वर्ष</h4>
+                            <p>उत्कृष्ट सेवा</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <div>
+                            <h4>५०००+</h4>
+                            <p>स्नातकहरू</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <div>
+                            <h4>१००%</h4>
+                            <p>रोजगारी दर</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Grid -->
+    <div class="container main-grid">
+        <!-- Left Sidebar -->
+        <aside class="sidebar left-sidebar">
+            <!-- Notice Board -->
+            <div class="notice-board">
+                <h3 class="sidebar-title"><i class="fas fa-bullhorn"></i> नयाँ सूचनाहरू</h3>
+                <ul class="notice-list" id="noticeList">
+                    <!-- Dynamic notices will be loaded here -->
+                </ul>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="quick-links">
+                <h3 class="sidebar-title"><i class="fas fa-link"></i> द्रुत लिङ्कहरू</h3>
+                <a href="#results" class="quick-link-item">
+                    <i class="fas fa-poll"></i>
+                    <span>नतिजा हेर्नुहोस्</span>
+                </a>
+                <a href="#routine" class="quick-link-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>कक्षा समय तालिका</span>
+                </a>
+                <a href="#library" class="quick-link-item">
+                    <i class="fas fa-book-reader"></i>
+                    <span>पुस्तकालय</span>
+                </a>
+                <a href="#hostel" class="quick-link-item">
+                    <i class="fas fa-hotel"></i>
+                    <span>छात्रावास</span>
+                </a>
+                <a href="#downloads" class="quick-link-item">
+                    <i class="fas fa-download"></i>
+                    <span>डाउनलोडहरू</span>
+                </a>
+            </div>
+
+            <!-- Important Dates -->
+            <div class="important-dates">
+                <h3 class="sidebar-title"><i class="fas fa-calendar-check"></i> महत्वपूर्ण मितिहरू</h3>
+                <div id="importantDates">
+                    <!-- Dynamic dates will be loaded here -->
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="content-area">
+            <!-- About Section -->
+            <section class="content-card animate-on-scroll" id="about">
+                <h2 class="content-title"><i class="fas fa-university"></i> हाम्रो संस्थाको बारेमा</h2>
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="APF NIHS Campus">
+                    </div>
+                    <div class="about-text">
+                        <p>नेपाल प्रहरी अन्तर्गत सञ्चालित APF नेपाल स्वास्थ्य विज्ञान संस्थान (APF NIHS) बलम्बु, काठमाडौंमा अवस्थित एक प्रतिष्ठित स्वास्थ्य शिक्षा संस्था हो। यो संस्था विभिन्न स्वास्थ्य विज्ञान सम्बन्धी शैक्षिक कार्यक्रमहरू संचालन गर्दै आएको छ।</p>
+                        <p>हाम्रो उद्देश्य दक्ष, कर्तव्यनिष्ठ र सेवाभावी स्वास्थ्यकर्मीहरू तयार पार्नु हो। अत्याधुनिक प्रयोगशाला, अनुभवी शिक्षकहरू र व्यावहारिक प्रशिक्षणको माध्यमबाट हामी विद्यार्थीहरूलाई उत्कृष्ट शिक्षा प्रदान गर्दछौं।</p>
+                        <a href="#more-about" class="course-btn">
+                            <i class="fas fa-plus-circle"></i> थप पढ्नुहोस्
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Courses Section -->
+            <section class="content-card animate-on-scroll" id="courses">
+                <h2 class="content-title"><i class="fas fa-graduation-cap"></i> हाम्रा शैक्षिक कार्यक्रमहरू</h2>
+                <div class="courses-grid">
+                    <div class="course-card">
+                        <div class="course-icon">
+                            <i class="fas fa-user-nurse"></i>
+                        </div>
+                        <h4>प्रोफेसनल नर्सिंग (PCL नर्सिंग)</h4>
+                        <ul class="course-details">
+                            <li><i class="fas fa-clock"></i> अवधि: ३ वर्ष</li>
+                            <li><i class="fas fa-users"></i> सीट: ४०</li>
+                            <li><i class="fas fa-certificate"></i> नेपाल नर्सिंग काउन्सिल मान्यता प्राप्त</li>
+                        </ul>
+                        <a href="#nursing-details" class="course-btn">विस्तृत जानकारी</a>
+                    </div>
+                    
+                    <div class="course-card">
+                        <div class="course-icon">
+                            <i class="fas fa-stethoscope"></i>
+                        </div>
+                        <h4>हेल्थ असिस्टेन्ट (HA)</h4>
+                        <ul class="course-details">
+                            <li><i class="fas fa-clock"></i> अवधि: १८ महिना</li>
+                            <li><i class="fas fa-users"></i> सीट: ३५</li>
+                            <li><i class="fas fa-certificate"></i> CTEVT मान्यता प्राप्त</li>
+                        </ul>
+                        <a href="#ha-details" class="course-btn">विस्तृत जानकारी</a>
+                    </div>
+                    
+                    <div class="course-card">
+                        <div class="course-icon">
+                            <i class="fas fa-ambulance"></i>
+                        </div>
+                        <h4>इमर्जेन्सी मेडिकल टेक्निशियन</h4>
+                        <ul class="course-details">
+                            <li><i class="fas fa-clock"></i> अवधि: १ वर्ष</li>
+                            <li><i class="fas fa-users"></i> सीट: ३०</li>
+                            <li><i class="fas fa-certificate"></i> आपतकालीन चिकित्सा प्रमाणपत्र</li>
+                        </ul>
+                        <a href="#emt-details" class="course-btn">विस्तृत जानकारी</a>
+                    </div>
+                    
+                    <div class="course-card">
+                        <div class="course-icon">
+                            <i class="fas fa-pills"></i>
+                        </div>
+                        <h4>फार्मेसी असिस्टेन्ट</h4>
+                        <ul class="course-details">
+                            <li><i class="fas fa-clock"></i> अवधि: १८ महिना</li>
+                            <li><i class="fas fa-users"></i> सीट: २५</li>
+                            <li><i class="fas fa-certificate"></i> नेपाल फार्मेसी काउन्सिल मान्यता प्राप्त</li>
+                        </ul>
+                        <a href="#pharmacy-details" class="course-btn">विस्तृत जानकारी</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gallery Section -->
+            <section class="content-card animate-on-scroll" id="gallery">
+                <h2 class="content-title"><i class="fas fa-camera"></i> फोटो र भिडियो ग्यालरी</h2>
+                <div class="gallery-container">
+                    <div class="gallery-nav">
+                        <button class="gallery-nav-btn active" data-filter="all">सबै</button>
+                        <button class="gallery-nav-btn" data-filter="events">कार्यक्रमहरू</button>
+                        <button class="gallery-nav-btn" data-filter="campus">क्याम्पस</button>
+                        <button class="gallery-nav-btn" data-filter="activities">गतिविधिहरू</button>
+                    </div>
+                    <div class="gallery-grid" id="galleryGrid">
+                        <!-- Gallery items will be dynamically loaded -->
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Right Sidebar -->
+        <aside class="sidebar right-sidebar">
+            <!-- Upcoming Events -->
+            <div class="upcoming-events">
+                <h3 class="sidebar-title"><i class="fas fa-calendar-alt"></i> आगामी कार्यक्रम</h3>
+                <div id="upcomingEvents">
+                    <!-- Events will be dynamically loaded -->
+                </div>
+            </div>
+
+            <!-- Teacher Profiles -->
+            <div class="teacher-profiles" id="teachers">
+                <h3 class="sidebar-title"><i class="fas fa-chalkboard-teacher"></i> अनुभवी शिक्षकहरू</h3>
+                <div class="teachers-slider" id="teachersSlider">
+                    <!-- Teacher cards will be dynamically loaded -->
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Stats Section -->
+    <section class="stats-section animate-on-scroll">
+        <div class="container">
+            <h2 style="color: white; text-align: center; margin-bottom: 50px; font-size: 2.5rem;">हाम्रो उपलब्धिहरू</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="stat-number" data-count="5000">0</div>
+                    <h3>स्नातकहरू</h3>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <div class="stat-number" data-count="50">0</div>
+                    <h3>शिक्षकहरू</h3>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="stat-number" data-count="25">0</div>
+                    <h3>कक्षाहरू</h3>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="stat-number" data-count="20">0</div>
+                    <h3>पुरस्कारहरू</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer" id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3><i class="fas fa-university"></i> संस्था परिचय</h3>
+                    <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.8; margin-bottom: 20px;">
+                        APF नेपाल स्वास्थ्य विज्ञान संस्थान नेपाल पुलिसको संरक्षणमा सञ्चालित एक प्रतिष्ठित स्वास्थ्य शिक्षा संस्था हो। दक्ष स्वास्थ्यकर्मी तयार पार्ने हाम्रो मुख्य उद्देश्य हो।
+                    </p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3><i class="fas fa-link"></i> द्रुत लिङ्कहरू</h3>
+                    <ul class="footer-links">
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i> हाम्रो बारे</a></li>
+                        <li><a href="#courses"><i class="fas fa-chevron-right"></i> कोर्सहरू</a></li>
+                        <li><a href="#admission"><i class="fas fa-chevron-right"></i> भर्ना प्रक्रिया</a></li>
+                        <li><a href="#results"><i class="fas fa-chevron-right"></i> नतिजा</a></li>
+                        <li><a href="#downloads"><i class="fas fa-chevron-right"></i> डाउनलोडहरू</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3><i class="fas fa-map-marker-alt"></i> सम्पर्क ठेगाना</h3>
+                    <div class="contact-info-footer">
+                        <p><i class="fas fa-location-dot"></i> चन्द्रागिरि नगरपालिका-१२, बलम्बु, काठमाडौं</p>
+                        <p><i class="fas fa-phone"></i> +९७७-१-४३१३६००, ४३१३६०१</p>
+                        <p><i class="fas fa-envelope"></i> apfnihs@gmail.com</p>
+                        <p><i class="fas fa-clock"></i> कार्य दिवस: आइतबार-शुक्रबार (१०:०० AM - ५:०० PM)</p>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3><i class="fas fa-map"></i> हाम्रो अवस्थिति</h3>
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.8803734084535!2d85.2415513!3d27.6908358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb239634863f69%3A0x897960100f91a921!2sAPF%20Nepal%20Hospital!5e0!3m2!1sen!2snp!4v1715678901234!5m2!1sen!2snp" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; २०२५ APF नेपाल स्वास्थ्य विज्ञान संस्थान, बलम्बु। सर्वाधिकार सुरक्षित।</p>
+            <p style="margin-top: 10px; font-size: 0.85rem;">Website Designed & Developed by APF NIHS IT Department</p>
+        </div>
+    </footer>
+
+    <!-- Gallery Modal -->
+    <div class="modal" id="galleryModal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <div id="modalGalleryContent"></div>
+        </div>
+    </div>
+
+    <!-- Teacher Modal -->
+    <div class="modal" id="teacherModal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <div id="modalTeacherContent"></div>
+        </div>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    
+    <script>
+        // Preloader
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            preloader.style.opacity = '0';
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 500);
+        });
+
+        // Mobile Menu Toggle
+        document.getElementById('menuToggle').addEventListener('click', () => {
+            document.getElementById('mainNav').classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const menu = document.getElementById('mainNav');
+            const toggle = document.getElementById('menuToggle');
+            if (!menu.contains(e.target) && !toggle.contains(e.target) && menu.classList.contains('active')) {
+                menu.classList.remove('active');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.getElementById('mainNav').classList.remove('active');
+                }
+            });
+        });
+
+        // Active nav link on scroll
+        const sections = document.querySelectorAll('section[id], .content-card[id]');
+        const navLinks = document.querySelectorAll('.nav-list a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if(pageYOffset >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if(link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Animate on scroll
+        const animateElements = document.querySelectorAll('.animate-on-scroll');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        animateElements.forEach(el => observer.observe(el));
+
+        // Animated counter for stats
+        const counters = document.querySelectorAll('.stat-number');
+        const speed = 200;
+
+        const startCounter = (counter) => {
+            const target = +counter.getAttribute('data-count');
+            const count = +counter.innerText;
+            const increment = target / speed;
+
+            if(count < target) {
+                counter.innerText = Math.ceil(count + increment);
+                setTimeout(() => startCounter(counter), 1);
+            } else {
+                counter.innerText = target.toLocaleString();
+            }
+        };
+
+        const statsSection = document.querySelector('.stats-section');
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    counters.forEach(counter => {
+                        startCounter(counter);
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+
+        if(statsSection) {
+            statsObserver.observe(statsSection);
+        }
+
+        // Gallery filtering
+        const galleryNavBtns = document.querySelectorAll('.gallery-nav-btn');
+        galleryNavBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                galleryNavBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                // Filter logic would go here
+                // For now, just log the filter
+                console.log('Filter:', btn.getAttribute('data-filter'));
+            });
+        });
+
+        // Modal functionality
+        const modals = document.querySelectorAll('.modal');
+        const closeButtons = document.querySelectorAll('.close-modal');
+
+        closeButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                modals.forEach(modal => {
+                    modal.style.display = 'none';
+                });
+            });
+        });
+
+        modals.forEach(modal => {
+            modal.addEventListener('click', (e) => {
+                if(e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+
+        // Sample data loading (in a real scenario, this would be from an API)
+        document.addEventListener('DOMContentLoaded', () => {
+            // Sample notices
+            const noticeList = document.getElementById('noticeList');
+            const notices = [
+                { title: '२०८१ सालको भर्ना प्रक्रिया सुरु', date: '२०८१/०१/१५', type: 'भर्ना' },
+                { title: 'वार्षिक परीक्षाको नतिजा प्रकाशन', date: '२०८१/०१/१०', type: 'नतिजा' },
+                { title: 'शैक्षिक भ्रमणको सूचना', date: '२०८१/०१/०५', type: 'सूचना' },
+                { title: 'नयाँ पाठ्यक्रम सुरुवात', date: '२०८१/०१/०१', type: 'पाठ्यक्रम' }
+            ];
+
+            notices.forEach(notice => {
+                const li = document.createElement('li');
+                li.className = 'notice-item';
+                li.innerHTML = `
+                    <h4>${notice.title} <span class="date">${notice.date}</span></h4>
+                    <p>${notice.type}</p>
+                `;
+                noticeList.appendChild(li);
+            });
+
+            // Sample events
+            const upcomingEvents = document.getElementById('upcomingEvents');
+            const events = [
+                { title: 'वार्षिक खेलकुद प्रतियोगिता', date: '२०८१/०१/२०', location: 'क्याम्पस मैदान' },
+                { title: 'रक्तदान शिविर', date: '२०८१/०१/२५', location: 'प्राथमिक चिकित्सा केन्द्र' },
+                { title: 'शैक्षिक भ्रमण', date: '२०८१/०२/०५', location: 'त्रिवि अस्पताल' }
+            ];
+
+            events.forEach(event => {
+                const div = document.createElement('div');
+                div.className = 'event-card';
+                div.innerHTML = `
+                    <div class="event-date">${event.date}</div>
+                    <h4>${event.title}</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> ${event.location}</p>
+                `;
+                upcomingEvents.appendChild(div);
+            });
+
+            // Sample gallery items
+            const galleryGrid = document.getElementById('galleryGrid');
+            const galleryItems = [
+                { type: 'events', image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', caption: 'वार्षिक समारोह २०८०' },
+                { type: 'campus', image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', caption: 'हाम्रो क्याम्पस' },
+                { type: 'activities', image: 'https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', caption: 'प्रयोगशाला कक्षा' },
+                { type: 'events', image: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', caption: 'रक्तदान कार्यक्रम' }
+            ];
+
+            galleryItems.forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'gallery-item';
+                div.setAttribute('data-filter', item.type);
+                div.innerHTML = `
+                    <img src="${item.image}" alt="${item.caption}">
+                    <div class="gallery-caption">${item.caption}</div>
+                `;
+                galleryGrid.appendChild(div);
+            });
+
+            // Initialize Owl Carousel for teachers
+            if($('#teachersSlider').length) {
+                $('#teachersSlider').owlCarousel({
+                    items: 1,
+                    loop: true,
+                    margin: 20,
+                    autoplay: true,
+                    autoplayTimeout: 3000,
+                    responsive: {
+                        0: { items: 1 },
+                        600: { items: 1 },
+                        1000: { items: 1 }
+                    }
+                });
+            }
+        });
+
+        // Form submission handling
+        document.addEventListener('submit', (e) => {
+            if(e.target.matches('form')) {
+                e.preventDefault();
+                // Handle form submission
+                alert('धन्यवाद! तपाईंको सन्देश पठाइएको छ।');
+                e.target.reset();
+            }
+        });
+    </script>
+</body>
+</html>
